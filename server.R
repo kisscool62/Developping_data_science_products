@@ -1,6 +1,9 @@
 
 library(ggplot2)
 
+#
+# view initialized data in global.R
+#
 
 createModel <- function(current_country){
         country_chosen_age <- df_ages[current_country,]
