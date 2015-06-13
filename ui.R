@@ -1,9 +1,16 @@
 shinyUI(pageWithSidebar(
-        headerPanel("Example plot"),
+        headerPanel("Age for maternity?"),
         sidebarPanel(
-                sliderInput('mu', 'Guess at the mu',value = 70, min = 60, max = 80, step = 0.05,)
+                sliderInput(
+                        'birthdate', 
+                        'When did you born?',
+                        value = 1982, min = 1965, max = 2015, step = 1),
+                selectInput('current_country', 'Where do you live?', countries)
+                ,
+                numericInput('expected_age', 'What age do you expect to have your first child?', 29)
         ),
         mainPanel(
-                plotOutput('newHist')
+                plotOutput('new_plot'),
+                textOutput('predicted_age')
         )
 ))
